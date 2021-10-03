@@ -1,4 +1,3 @@
-// Define generatePassword function
 // Prompt the user to choose password criteria
 // Length of Password (between 8 and 128 characters)
 // Confirm for Lowercase, uppercase, numeric and symbols
@@ -19,21 +18,21 @@ function passwordOptions() {
   var promptLenght = parseInt(prompt("Please choose the password length!"));
   if (promptLenght < 8) {
     alert("Your password should be between 8 and 128 characters");
-    return null;
+    return;
   }
   if (promptLenght > 128) {
     alert("Your password should be between 8 and 128 characters");
-    return null;
+    return;
   }
-   if (Number.isNaN(promptLenght)) {
+  if (Number.isNaN(promptLenght)) {
     alert("Password lenght must be a number!");
-    return null;
+    return;
   }
   // Confirm if the user want to add lowercase, uppercase, numbers and symbols in the password
   var confirmLowercase = confirm("Do you want to include lowercase alphabet?");
   var confirmUppercase = confirm("Do you want to include Uppercase alphabet?");
   var confirmNumbers = confirm("Do you want to include numbers?");
-  var confirmSymbols = confirm("Do you want to include Symbols?");
+  var confirmSymbols = confirm("Do you want to include symbols?");
 
   // Validate the input
   function validate() {
@@ -103,7 +102,7 @@ function generatePassword() {
       results.push(randomEl); 
   }
 
-  return results.join("") ;
+  return results.join("");
 }
 
 // Write password to the #password input
